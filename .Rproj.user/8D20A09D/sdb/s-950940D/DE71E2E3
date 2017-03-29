@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"長庚大學 大數據分析方法 作業三\"\noutput: github_document\n---\n\n\n## 網站資料爬取\n```{r}\nlibrary(rvest) \nPTT<-\"https://www.ptt.cc/bbs/NBA/index.html\"\nPTT2<-\"https://www.ptt.cc/bbs/NBA/index4627.html\"\nPTT3<-\"https://www.ptt.cc/bbs/NBA/index4626.html\"\nPTT4<-\"https://www.ptt.cc/bbs/NBA/index4625.html\"\nPTT5<-\"https://www.ptt.cc/bbs/NBA/index4624.html\"\nPTT6<-\"https://www.ptt.cc/bbs/NBA/index4623.html\"\nb <- c(PTT,PTT2,PTT3,PTT4,PTT5,PTT6)\nframeALL <- NULL\n\nfor(n in b){\nPTTContent<-read_html(n)\npost_title <- PTTContent %>% html_nodes(\".title\") %>% html_text()\npost_title\npost_nrec <- PTTContent %>% html_nodes(\".nrec\") %>% html_text()\npost_nrec\npost_author <- PTTContent %>% html_nodes(\".author\") %>% html_text()\npost_author\n\n\npppt <- data.frame(Title=c(post_title),\n                   pushNum=c(post_nrec),\n                   Author=c(post_author)\n                   )\npppt\nframeALL <- rbind(frameALL,pppt)\n}\n\n```\n\n## 爬蟲結果呈現\n```{r}\nknitr::kable (\n    frameALL[1:100,c(\"Title\",\"pushNum\",\"Author\")]) \n\n```\n\n## 解釋爬蟲結果 \n```{r}\ndim(frameALL) \n```\n\n共爬出111篇標題與title，pushnum，author共3個欄位\n\n```{r}\ntable(frameALL$Author)\n```\n分析作者kadasaki的出現次數最多，有4次\n\n學會爬蟲之後發現，不知道為什麼，用貼六次網址，沒辦法爬出最新的6頁，想學怎樣可以正確爬出來~~\n",
+    "created" : 1490786952560.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2928128396",
+    "id" : "DE71E2E3",
+    "lastKnownWriteTime" : 1490789489,
+    "last_content_update" : 1490790537813,
+    "path" : "~/GitHub/cguim-bigdata-hw3-yahsuanyeh/cguim-bigdata-hw3-yahsuanyeh/README.Rmd",
+    "project_path" : "README.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

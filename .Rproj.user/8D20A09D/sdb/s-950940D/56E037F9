@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1490787417324.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "56E037F9",
+    "lastKnownWriteTime" : 7308604914264011873,
+    "last_content_update" : 1490787417324,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "584F7078",
+        "caption" : "pppt",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=pppt&cache_key=584F7078",
+        "displayedObservations" : 20,
+        "environment" : "",
+        "object" : "pppt",
+        "preview" : 0,
+        "totalObservations" : 20,
+        "variables" : 3
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
